@@ -79,6 +79,13 @@
 			this.label17 = new System.Windows.Forms.Label();
 			this.label18 = new System.Windows.Forms.Label();
 			this.lvDsMonAn = new System.Windows.Forms.ListView();
+			this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.btnAddFood = new System.Windows.Forms.Button();
 			this.btnAddCategory = new System.Windows.Forms.Button();
 			this.label14 = new System.Windows.Forms.Label();
@@ -88,13 +95,7 @@
 			this.label12 = new System.Windows.Forms.Label();
 			this.flpDsLoaiMatHang = new System.Windows.Forms.FlowLayoutPanel();
 			this.tabPage4 = new System.Windows.Forms.TabPage();
-			this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.tabPage2.SuspendLayout();
@@ -540,6 +541,7 @@
 			this.cbbNhaCC.Name = "cbbNhaCC";
 			this.cbbNhaCC.Size = new System.Drawing.Size(183, 24);
 			this.cbbNhaCC.TabIndex = 15;
+			this.cbbNhaCC.Text = "--Chọn nhà cung cấp ---";
 			// 
 			// txtTenHang
 			// 
@@ -584,6 +586,7 @@
             this.columnHeader11,
             this.columnHeader12,
             this.columnHeader13,
+            this.columnHeader16,
             this.columnHeader14,
             this.columnHeader15});
 			this.lvDsMonAn.FullRowSelect = true;
@@ -596,6 +599,39 @@
 			this.lvDsMonAn.View = System.Windows.Forms.View.Details;
 			this.lvDsMonAn.SelectedIndexChanged += new System.EventHandler(this.lvDsMonAn_SelectedIndexChanged);
 			this.lvDsMonAn.DoubleClick += new System.EventHandler(this.lvDsMonAn_DoubleClick);
+			// 
+			// columnHeader9
+			// 
+			this.columnHeader9.Text = "Id";
+			this.columnHeader9.Width = 33;
+			// 
+			// columnHeader10
+			// 
+			this.columnHeader10.Text = "Tên món ăn";
+			this.columnHeader10.Width = 167;
+			// 
+			// columnHeader11
+			// 
+			this.columnHeader11.Text = "Đơn vị tính";
+			this.columnHeader11.Width = 83;
+			// 
+			// columnHeader12
+			// 
+			this.columnHeader12.Text = "Đơn giá";
+			this.columnHeader12.Width = 70;
+			// 
+			// columnHeader13
+			// 
+			this.columnHeader13.Text = "Loại món ăn";
+			this.columnHeader13.Width = 89;
+			// 
+			// columnHeader14
+			// 
+			this.columnHeader14.Text = "Mô tả";
+			// 
+			// columnHeader15
+			// 
+			this.columnHeader15.Text = "Hình ảnh";
 			// 
 			// btnAddFood
 			// 
@@ -681,37 +717,9 @@
 			this.tabPage4.Text = "tabPage4";
 			this.tabPage4.UseVisualStyleBackColor = true;
 			// 
-			// columnHeader9
+			// columnHeader16
 			// 
-			this.columnHeader9.Text = "Id";
-			// 
-			// columnHeader10
-			// 
-			this.columnHeader10.Text = "Tên món ăn";
-			this.columnHeader10.Width = 220;
-			// 
-			// columnHeader11
-			// 
-			this.columnHeader11.Text = "Đơn vị tính";
-			this.columnHeader11.Width = 83;
-			// 
-			// columnHeader12
-			// 
-			this.columnHeader12.Text = "Đơn giá";
-			this.columnHeader12.Width = 70;
-			// 
-			// columnHeader13
-			// 
-			this.columnHeader13.Text = "Loại món ăn";
-			this.columnHeader13.Width = 89;
-			// 
-			// columnHeader14
-			// 
-			this.columnHeader14.Text = "Mô tả";
-			// 
-			// columnHeader15
-			// 
-			this.columnHeader15.Text = "Hình ảnh";
+			this.columnHeader16.Text = "Nhà CC";
 			// 
 			// AdminForm
 			// 
@@ -809,5 +817,6 @@
 		private System.Windows.Forms.ColumnHeader columnHeader13;
 		private System.Windows.Forms.ColumnHeader columnHeader14;
 		private System.Windows.Forms.ColumnHeader columnHeader15;
+		private System.Windows.Forms.ColumnHeader columnHeader16;
 	}
 }

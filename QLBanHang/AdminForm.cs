@@ -98,6 +98,7 @@ namespace QLBanHang
 			item.SubItems.Add(f.Unit);
 			item.SubItems.Add(f.UnitPrice.ToString());
 			item.SubItems.Add(f.CategoryId.ToString());
+			item.SubItems.Add(f.NhaCungCap);
 			item.SubItems.Add(f.Description);
 			item.SubItems.Add(f.ImageLink);
 
@@ -107,7 +108,11 @@ namespace QLBanHang
 		private void btnAddFood_Click(object sender, EventArgs e)
 		{
 			var foodDlg = new FoodForm();
-			foodDlg.ShowDialog();
+			if (foodDlg.ShowDialog() == DialogResult.OK)
+			{
+				var food = foodDlg.ReturnedFood;
+				AddFoodToLV(food);
+			}
 		}
 
 		private void lvDsMonAn_SelectedIndexChanged(object sender, EventArgs e)
@@ -117,8 +122,22 @@ namespace QLBanHang
 
 		private void lvDsMonAn_DoubleClick(object sender, EventArgs e)
 		{
-			var foodDlg = new FoodForm();
-			foodDlg.ShowDialog();
+			if (lvDsMonAn.SelectedItems.Count == 0) return;
+
+			var item = lvDsMonAn.SelectedItems[0];
+			var foodId = Convert.ToInt32(item.Text);
+
+			var dialog = new FoodForm(foodId);
+			if (dialog.ShowDialog() == DialogResult.OK)
+			{
+				var food = dialog.ReturnedFood;
+				item.SubItems[1].Text = food.Name;
+				item.SubItems[2].Text = food.Unit;
+				item.SubItems[3].Text = food.UnitPrice.ToString();
+				item.SubItems[4].Text = food.CategoryId.ToString();
+				item.SubItems[5].Text = food.Description;
+				item.SubItems[6].Text = food.ImageLink;
+			}
 		}
 	}
 }

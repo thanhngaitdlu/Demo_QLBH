@@ -22,12 +22,14 @@ namespace QLBanHang
 
 		public int CategoryId { get; set; }
 
+		public string NhaCungCap { get; set; }
+
 		public Food()
 		{
 
 		}
 
-		public Food(int id, string name, string unit, int unitPrice, string description, string imageLink, int categoryId)
+		public Food(int id, string name, string unit, int unitPrice, string description, string imageLink, int categoryId, string nhacc)
 		{
 			Id = id;
 			Name = name;
@@ -36,6 +38,7 @@ namespace QLBanHang
 			Description = description;
 			ImageLink = imageLink;
 			CategoryId = categoryId;
+			NhaCungCap = nhacc;
 		}
 	}
 }
