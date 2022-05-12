@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,19 +22,36 @@ namespace QLBanHang
 		{
 			var username = txtLoginName.Text;
 			var passWord = txtPassword.Text;
+			
 			if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(passWord))
 			{
 				MessageBox.Show("Vui lòng nhập thông tin đăng nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
 			}
 
-			if (username.CompareTo("a") != 0 && passWord.CompareTo("1") != 0)
+			var account = WorkingContext.AccountList.FirstOrDefault(acc => acc.LoginName == username);
+
+			if (account != null)
 			{
-				lblMessage.Text = "Sai tên đăng nhập và mật khẩu.";
+				var sha1 = new SHA1CryptoServiceProvider();
+				var data = Encoding.ASCII.GetBytes(passWord);
+				var shaData = sha1.ComputeHash(data);
+				var hashedPassword = Encoding.ASCII.GetString(shaData);
+				if (account.Password.CompareTo(hashedPassword) == 0)
+				{
+					WorkingContext.CurrentUser = account;
+					WorkingContext.Password = hashedPassword;
+					this.DialogResult = DialogResult.OK;
+				}
+					
+				else
+				{
+					MessageBox.Show("Mật khẩu sai", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
 			}
 			else
 			{
-				this.DialogResult = DialogResult.OK;
+				MessageBox.Show("Không tồn tại tên đăng nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
 	}

@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.btnLuu = new System.Windows.Forms.Button();
@@ -75,7 +76,7 @@
 			this.label20 = new System.Windows.Forms.Label();
 			this.cbbNhaCC = new System.Windows.Forms.ComboBox();
 			this.txtTenHang = new System.Windows.Forms.TextBox();
-			this.label16 = new System.Windows.Forms.Label();
+			this.lblFoodNum = new System.Windows.Forms.Label();
 			this.label17 = new System.Windows.Forms.Label();
 			this.label18 = new System.Windows.Forms.Label();
 			this.lvDsMonAn = new System.Windows.Forms.ListView();
@@ -84,18 +85,50 @@
 			this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.ctmsDsMh = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.tsmiDelete = new System.Windows.Forms.ToolStripMenuItem();
+			this.thốngKêSốLượngĐãBánToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.danhSáchKháchHàngĐãMuaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.btnAddFood = new System.Windows.Forms.Button();
 			this.btnAddCategory = new System.Windows.Forms.Button();
-			this.label14 = new System.Windows.Forms.Label();
+			this.lblCategoryNum = new System.Windows.Forms.Label();
 			this.label15 = new System.Windows.Forms.Label();
 			this.label13 = new System.Windows.Forms.Label();
 			this.label19 = new System.Windows.Forms.Label();
 			this.label12 = new System.Windows.Forms.Label();
 			this.flpDsLoaiMatHang = new System.Windows.Forms.FlowLayoutPanel();
 			this.tabPage4 = new System.Windows.Forms.TabPage();
-			this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.groupBox4 = new System.Windows.Forms.GroupBox();
+			this.checkBox1 = new System.Windows.Forms.CheckBox();
+			this.groupBox5 = new System.Windows.Forms.GroupBox();
+			this.radioButton1 = new System.Windows.Forms.RadioButton();
+			this.radioButton2 = new System.Windows.Forms.RadioButton();
+			this.button2 = new System.Windows.Forms.Button();
+			this.button3 = new System.Windows.Forms.Button();
+			this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
+			this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+			this.textBox7 = new System.Windows.Forms.TextBox();
+			this.textBox5 = new System.Windows.Forms.TextBox();
+			this.label21 = new System.Windows.Forms.Label();
+			this.label24 = new System.Windows.Forms.Label();
+			this.label22 = new System.Windows.Forms.Label();
+			this.label25 = new System.Windows.Forms.Label();
+			this.textBox6 = new System.Windows.Forms.TextBox();
+			this.label26 = new System.Windows.Forms.Label();
+			this.lvAccountList = new System.Windows.Forms.ListView();
+			this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.label27 = new System.Windows.Forms.Label();
+			this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader25 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.tabPage2.SuspendLayout();
@@ -104,6 +137,10 @@
 			this.groupBox3.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.nudSoLuong)).BeginInit();
+			this.ctmsDsMh.SuspendLayout();
+			this.tabPage4.SuspendLayout();
+			this.groupBox4.SuspendLayout();
+			this.groupBox5.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tabControl1
@@ -451,13 +488,13 @@
 			// 
 			this.tabPage3.Controls.Add(this.groupBox3);
 			this.tabPage3.Controls.Add(this.groupBox2);
-			this.tabPage3.Controls.Add(this.label16);
+			this.tabPage3.Controls.Add(this.lblFoodNum);
 			this.tabPage3.Controls.Add(this.label17);
 			this.tabPage3.Controls.Add(this.label18);
 			this.tabPage3.Controls.Add(this.lvDsMonAn);
 			this.tabPage3.Controls.Add(this.btnAddFood);
 			this.tabPage3.Controls.Add(this.btnAddCategory);
-			this.tabPage3.Controls.Add(this.label14);
+			this.tabPage3.Controls.Add(this.lblCategoryNum);
 			this.tabPage3.Controls.Add(this.label15);
 			this.tabPage3.Controls.Add(this.label13);
 			this.tabPage3.Controls.Add(this.label19);
@@ -536,12 +573,15 @@
 			// 
 			this.cbbNhaCC.FormattingEnabled = true;
 			this.cbbNhaCC.Items.AddRange(new object[] {
-            "----Chọn nhà cung cấp------"});
+            "Bếp 1",
+            "Bếp 2",
+            "Bếp 3"});
 			this.cbbNhaCC.Location = new System.Drawing.Point(281, 21);
 			this.cbbNhaCC.Name = "cbbNhaCC";
 			this.cbbNhaCC.Size = new System.Drawing.Size(183, 24);
 			this.cbbNhaCC.TabIndex = 15;
 			this.cbbNhaCC.Text = "--Chọn nhà cung cấp ---";
+			this.cbbNhaCC.SelectedIndexChanged += new System.EventHandler(this.cbbNhaCC_SelectedIndexChanged);
 			// 
 			// txtTenHang
 			// 
@@ -551,14 +591,14 @@
 			this.txtTenHang.TabIndex = 14;
 			this.txtTenHang.Text = "---Nhập tên/mã sản phẩm--";
 			// 
-			// label16
+			// lblFoodNum
 			// 
-			this.label16.AutoSize = true;
-			this.label16.Location = new System.Drawing.Point(401, 654);
-			this.label16.Name = "label16";
-			this.label16.Size = new System.Drawing.Size(16, 17);
-			this.label16.TabIndex = 4;
-			this.label16.Text = "0";
+			this.lblFoodNum.AutoSize = true;
+			this.lblFoodNum.Location = new System.Drawing.Point(401, 654);
+			this.lblFoodNum.Name = "lblFoodNum";
+			this.lblFoodNum.Size = new System.Drawing.Size(16, 17);
+			this.lblFoodNum.TabIndex = 4;
+			this.lblFoodNum.Text = "0";
 			// 
 			// label17
 			// 
@@ -589,6 +629,7 @@
             this.columnHeader16,
             this.columnHeader14,
             this.columnHeader15});
+			this.lvDsMonAn.ContextMenuStrip = this.ctmsDsMh;
 			this.lvDsMonAn.FullRowSelect = true;
 			this.lvDsMonAn.GridLines = true;
 			this.lvDsMonAn.Location = new System.Drawing.Point(297, 82);
@@ -625,6 +666,10 @@
 			this.columnHeader13.Text = "Loại món ăn";
 			this.columnHeader13.Width = 89;
 			// 
+			// columnHeader16
+			// 
+			this.columnHeader16.Text = "Nhà CC";
+			// 
 			// columnHeader14
 			// 
 			this.columnHeader14.Text = "Mô tả";
@@ -632,6 +677,35 @@
 			// columnHeader15
 			// 
 			this.columnHeader15.Text = "Hình ảnh";
+			// 
+			// ctmsDsMh
+			// 
+			this.ctmsDsMh.ImageScalingSize = new System.Drawing.Size(20, 20);
+			this.ctmsDsMh.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiDelete,
+            this.thốngKêSốLượngĐãBánToolStripMenuItem,
+            this.danhSáchKháchHàngĐãMuaToolStripMenuItem});
+			this.ctmsDsMh.Name = "ctmsDsMh";
+			this.ctmsDsMh.Size = new System.Drawing.Size(280, 76);
+			// 
+			// tsmiDelete
+			// 
+			this.tsmiDelete.Name = "tsmiDelete";
+			this.tsmiDelete.Size = new System.Drawing.Size(279, 24);
+			this.tsmiDelete.Text = "Xóa";
+			this.tsmiDelete.Click += new System.EventHandler(this.tsmiDelete_Click);
+			// 
+			// thốngKêSốLượngĐãBánToolStripMenuItem
+			// 
+			this.thốngKêSốLượngĐãBánToolStripMenuItem.Name = "thốngKêSốLượngĐãBánToolStripMenuItem";
+			this.thốngKêSốLượngĐãBánToolStripMenuItem.Size = new System.Drawing.Size(279, 24);
+			this.thốngKêSốLượngĐãBánToolStripMenuItem.Text = "Thống kê số lượng đã bán";
+			// 
+			// danhSáchKháchHàngĐãMuaToolStripMenuItem
+			// 
+			this.danhSáchKháchHàngĐãMuaToolStripMenuItem.Name = "danhSáchKháchHàngĐãMuaToolStripMenuItem";
+			this.danhSáchKháchHàngĐãMuaToolStripMenuItem.Size = new System.Drawing.Size(279, 24);
+			this.danhSáchKháchHàngĐãMuaToolStripMenuItem.Text = "Danh sách khách hàng đã mua";
 			// 
 			// btnAddFood
 			// 
@@ -654,14 +728,14 @@
 			this.btnAddCategory.UseVisualStyleBackColor = true;
 			this.btnAddCategory.Click += new System.EventHandler(this.btnAddCategory_Click);
 			// 
-			// label14
+			// lblCategoryNum
 			// 
-			this.label14.AutoSize = true;
-			this.label14.Location = new System.Drawing.Point(81, 654);
-			this.label14.Name = "label14";
-			this.label14.Size = new System.Drawing.Size(16, 17);
-			this.label14.TabIndex = 1;
-			this.label14.Text = "0";
+			this.lblCategoryNum.AutoSize = true;
+			this.lblCategoryNum.Location = new System.Drawing.Point(81, 654);
+			this.lblCategoryNum.Name = "lblCategoryNum";
+			this.lblCategoryNum.Size = new System.Drawing.Size(16, 17);
+			this.lblCategoryNum.TabIndex = 1;
+			this.lblCategoryNum.Text = "0";
 			// 
 			// label15
 			// 
@@ -709,17 +783,254 @@
 			// 
 			// tabPage4
 			// 
+			this.tabPage4.Controls.Add(this.groupBox4);
+			this.tabPage4.Controls.Add(this.lvAccountList);
+			this.tabPage4.Controls.Add(this.label27);
 			this.tabPage4.Location = new System.Drawing.Point(4, 25);
 			this.tabPage4.Name = "tabPage4";
 			this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
 			this.tabPage4.Size = new System.Drawing.Size(1104, 684);
 			this.tabPage4.TabIndex = 3;
-			this.tabPage4.Text = "tabPage4";
+			this.tabPage4.Text = "Tài khoản";
 			this.tabPage4.UseVisualStyleBackColor = true;
 			// 
-			// columnHeader16
+			// groupBox4
 			// 
-			this.columnHeader16.Text = "Nhà CC";
+			this.groupBox4.Controls.Add(this.checkBox1);
+			this.groupBox4.Controls.Add(this.groupBox5);
+			this.groupBox4.Controls.Add(this.button2);
+			this.groupBox4.Controls.Add(this.button3);
+			this.groupBox4.Controls.Add(this.maskedTextBox3);
+			this.groupBox4.Controls.Add(this.maskedTextBox2);
+			this.groupBox4.Controls.Add(this.textBox7);
+			this.groupBox4.Controls.Add(this.textBox5);
+			this.groupBox4.Controls.Add(this.label21);
+			this.groupBox4.Controls.Add(this.label24);
+			this.groupBox4.Controls.Add(this.label22);
+			this.groupBox4.Controls.Add(this.label25);
+			this.groupBox4.Controls.Add(this.textBox6);
+			this.groupBox4.Controls.Add(this.label26);
+			this.groupBox4.Location = new System.Drawing.Point(32, 25);
+			this.groupBox4.Name = "groupBox4";
+			this.groupBox4.Size = new System.Drawing.Size(1037, 274);
+			this.groupBox4.TabIndex = 13;
+			this.groupBox4.TabStop = false;
+			this.groupBox4.Text = "Thông tin tài khoản";
+			// 
+			// checkBox1
+			// 
+			this.checkBox1.AutoSize = true;
+			this.checkBox1.Location = new System.Drawing.Point(157, 204);
+			this.checkBox1.Name = "checkBox1";
+			this.checkBox1.Size = new System.Drawing.Size(89, 21);
+			this.checkBox1.TabIndex = 13;
+			this.checkBox1.Text = "Kích hoạt";
+			this.checkBox1.UseVisualStyleBackColor = true;
+			// 
+			// groupBox5
+			// 
+			this.groupBox5.Controls.Add(this.radioButton1);
+			this.groupBox5.Controls.Add(this.radioButton2);
+			this.groupBox5.Location = new System.Drawing.Point(547, 108);
+			this.groupBox5.Name = "groupBox5";
+			this.groupBox5.Size = new System.Drawing.Size(435, 67);
+			this.groupBox5.TabIndex = 12;
+			this.groupBox5.TabStop = false;
+			this.groupBox5.Text = "Vai trò";
+			// 
+			// radioButton1
+			// 
+			this.radioButton1.AutoSize = true;
+			this.radioButton1.Location = new System.Drawing.Point(115, 29);
+			this.radioButton1.Name = "radioButton1";
+			this.radioButton1.Size = new System.Drawing.Size(78, 21);
+			this.radioButton1.TabIndex = 11;
+			this.radioButton1.TabStop = true;
+			this.radioButton1.Text = "Quản lý";
+			this.radioButton1.UseVisualStyleBackColor = true;
+			// 
+			// radioButton2
+			// 
+			this.radioButton2.AutoSize = true;
+			this.radioButton2.Location = new System.Drawing.Point(319, 29);
+			this.radioButton2.Name = "radioButton2";
+			this.radioButton2.Size = new System.Drawing.Size(93, 21);
+			this.radioButton2.TabIndex = 11;
+			this.radioButton2.TabStop = true;
+			this.radioButton2.Text = "Nhân viên";
+			this.radioButton2.UseVisualStyleBackColor = true;
+			// 
+			// button2
+			// 
+			this.button2.Location = new System.Drawing.Point(852, 214);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(130, 34);
+			this.button2.TabIndex = 10;
+			this.button2.Text = "Đặt lại mật khẩu";
+			this.button2.UseVisualStyleBackColor = true;
+			// 
+			// button3
+			// 
+			this.button3.Location = new System.Drawing.Point(642, 214);
+			this.button3.Name = "button3";
+			this.button3.Size = new System.Drawing.Size(114, 34);
+			this.button3.TabIndex = 10;
+			this.button3.Text = "Tạo tài khoản";
+			this.button3.UseVisualStyleBackColor = true;
+			// 
+			// maskedTextBox3
+			// 
+			this.maskedTextBox3.Location = new System.Drawing.Point(662, 71);
+			this.maskedTextBox3.Mask = "000000000000";
+			this.maskedTextBox3.Name = "maskedTextBox3";
+			this.maskedTextBox3.Size = new System.Drawing.Size(320, 22);
+			this.maskedTextBox3.TabIndex = 8;
+			// 
+			// maskedTextBox2
+			// 
+			this.maskedTextBox2.Location = new System.Drawing.Point(157, 71);
+			this.maskedTextBox2.Mask = "0000.000.000";
+			this.maskedTextBox2.Name = "maskedTextBox2";
+			this.maskedTextBox2.Size = new System.Drawing.Size(316, 22);
+			this.maskedTextBox2.TabIndex = 8;
+			// 
+			// textBox7
+			// 
+			this.textBox7.Location = new System.Drawing.Point(662, 30);
+			this.textBox7.Name = "textBox7";
+			this.textBox7.Size = new System.Drawing.Size(320, 22);
+			this.textBox7.TabIndex = 6;
+			// 
+			// textBox5
+			// 
+			this.textBox5.Location = new System.Drawing.Point(157, 112);
+			this.textBox5.Multiline = true;
+			this.textBox5.Name = "textBox5";
+			this.textBox5.Size = new System.Drawing.Size(316, 63);
+			this.textBox5.TabIndex = 6;
+			// 
+			// label21
+			// 
+			this.label21.AutoSize = true;
+			this.label21.Location = new System.Drawing.Point(544, 33);
+			this.label21.Name = "label21";
+			this.label21.Size = new System.Drawing.Size(99, 17);
+			this.label21.TabIndex = 3;
+			this.label21.Text = "Tên nhân viên";
+			// 
+			// label24
+			// 
+			this.label24.AutoSize = true;
+			this.label24.Location = new System.Drawing.Point(39, 115);
+			this.label24.Name = "label24";
+			this.label24.Size = new System.Drawing.Size(51, 17);
+			this.label24.TabIndex = 3;
+			this.label24.Text = "Địa chỉ";
+			// 
+			// label22
+			// 
+			this.label22.AutoSize = true;
+			this.label22.Location = new System.Drawing.Point(544, 76);
+			this.label22.Name = "label22";
+			this.label22.Size = new System.Drawing.Size(66, 17);
+			this.label22.TabIndex = 4;
+			this.label22.Text = "Số CCCD";
+			// 
+			// label25
+			// 
+			this.label25.AutoSize = true;
+			this.label25.Location = new System.Drawing.Point(39, 74);
+			this.label25.Name = "label25";
+			this.label25.Size = new System.Drawing.Size(91, 17);
+			this.label25.TabIndex = 4;
+			this.label25.Text = "Số điện thoại";
+			// 
+			// textBox6
+			// 
+			this.textBox6.Location = new System.Drawing.Point(157, 30);
+			this.textBox6.Name = "textBox6";
+			this.textBox6.Size = new System.Drawing.Size(316, 22);
+			this.textBox6.TabIndex = 7;
+			// 
+			// label26
+			// 
+			this.label26.AutoSize = true;
+			this.label26.Location = new System.Drawing.Point(39, 33);
+			this.label26.Name = "label26";
+			this.label26.Size = new System.Drawing.Size(105, 17);
+			this.label26.TabIndex = 5;
+			this.label26.Text = "Tên đăng nhập";
+			// 
+			// lvAccountList
+			// 
+			this.lvAccountList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader17,
+            this.columnHeader18,
+            this.columnHeader19,
+            this.columnHeader20,
+            this.columnHeader21,
+            this.columnHeader22,
+            this.columnHeader24,
+            this.columnHeader23,
+            this.columnHeader25});
+			this.lvAccountList.GridLines = true;
+			this.lvAccountList.Location = new System.Drawing.Point(32, 348);
+			this.lvAccountList.Name = "lvAccountList";
+			this.lvAccountList.Size = new System.Drawing.Size(1037, 280);
+			this.lvAccountList.TabIndex = 12;
+			this.lvAccountList.UseCompatibleStateImageBehavior = false;
+			this.lvAccountList.View = System.Windows.Forms.View.Details;
+			// 
+			// columnHeader17
+			// 
+			this.columnHeader17.Text = "Mã tài khoản";
+			this.columnHeader17.Width = 116;
+			// 
+			// columnHeader18
+			// 
+			this.columnHeader18.Text = "Tên đăng nhập";
+			this.columnHeader18.Width = 193;
+			// 
+			// columnHeader19
+			// 
+			this.columnHeader19.Text = "Tên nhân viên";
+			this.columnHeader19.Width = 109;
+			// 
+			// columnHeader20
+			// 
+			this.columnHeader20.Text = "Số CCCD";
+			this.columnHeader20.Width = 143;
+			// 
+			// columnHeader21
+			// 
+			this.columnHeader21.Text = "Số điện thoại";
+			// 
+			// columnHeader22
+			// 
+			this.columnHeader22.Text = "Địa chỉ";
+			// 
+			// columnHeader23
+			// 
+			this.columnHeader23.Text = "Trạng thái";
+			this.columnHeader23.Width = 106;
+			// 
+			// label27
+			// 
+			this.label27.AutoSize = true;
+			this.label27.Location = new System.Drawing.Point(29, 319);
+			this.label27.Name = "label27";
+			this.label27.Size = new System.Drawing.Size(138, 17);
+			this.label27.TabIndex = 11;
+			this.label27.Text = "Danh sách tài khoản";
+			// 
+			// columnHeader24
+			// 
+			this.columnHeader24.Text = "Vai trò";
+			// 
+			// columnHeader25
+			// 
+			this.columnHeader25.Text = "Mật khẩu";
+			this.columnHeader25.Width = 205;
 			// 
 			// AdminForm
 			// 
@@ -744,6 +1055,13 @@
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox2.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.nudSoLuong)).EndInit();
+			this.ctmsDsMh.ResumeLayout(false);
+			this.tabPage4.ResumeLayout(false);
+			this.tabPage4.PerformLayout();
+			this.groupBox4.ResumeLayout(false);
+			this.groupBox4.PerformLayout();
+			this.groupBox5.ResumeLayout(false);
+			this.groupBox5.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -796,13 +1114,13 @@
 		private System.Windows.Forms.Label label20;
 		private System.Windows.Forms.ComboBox cbbNhaCC;
 		private System.Windows.Forms.TextBox txtTenHang;
-		private System.Windows.Forms.Label label16;
+		private System.Windows.Forms.Label lblFoodNum;
 		private System.Windows.Forms.Label label17;
 		private System.Windows.Forms.Label label18;
 		private System.Windows.Forms.ListView lvDsMonAn;
 		private System.Windows.Forms.Button btnAddFood;
 		private System.Windows.Forms.Button btnAddCategory;
-		private System.Windows.Forms.Label label14;
+		private System.Windows.Forms.Label lblCategoryNum;
 		private System.Windows.Forms.Label label15;
 		private System.Windows.Forms.Label label13;
 		private System.Windows.Forms.Label label19;
@@ -818,5 +1136,37 @@
 		private System.Windows.Forms.ColumnHeader columnHeader14;
 		private System.Windows.Forms.ColumnHeader columnHeader15;
 		private System.Windows.Forms.ColumnHeader columnHeader16;
+		private System.Windows.Forms.GroupBox groupBox4;
+		private System.Windows.Forms.Button button3;
+		private System.Windows.Forms.MaskedTextBox maskedTextBox3;
+		private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+		private System.Windows.Forms.TextBox textBox7;
+		private System.Windows.Forms.TextBox textBox5;
+		private System.Windows.Forms.Label label21;
+		private System.Windows.Forms.Label label24;
+		private System.Windows.Forms.Label label22;
+		private System.Windows.Forms.Label label25;
+		private System.Windows.Forms.TextBox textBox6;
+		private System.Windows.Forms.Label label26;
+		private System.Windows.Forms.ListView lvAccountList;
+		private System.Windows.Forms.ColumnHeader columnHeader17;
+		private System.Windows.Forms.ColumnHeader columnHeader18;
+		private System.Windows.Forms.ColumnHeader columnHeader19;
+		private System.Windows.Forms.ColumnHeader columnHeader20;
+		private System.Windows.Forms.Label label27;
+		private System.Windows.Forms.ColumnHeader columnHeader21;
+		private System.Windows.Forms.ColumnHeader columnHeader22;
+		private System.Windows.Forms.CheckBox checkBox1;
+		private System.Windows.Forms.GroupBox groupBox5;
+		private System.Windows.Forms.RadioButton radioButton1;
+		private System.Windows.Forms.RadioButton radioButton2;
+		private System.Windows.Forms.ColumnHeader columnHeader23;
+		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.ContextMenuStrip ctmsDsMh;
+		private System.Windows.Forms.ToolStripMenuItem tsmiDelete;
+		private System.Windows.Forms.ToolStripMenuItem thốngKêSốLượngĐãBánToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem danhSáchKháchHàngĐãMuaToolStripMenuItem;
+		private System.Windows.Forms.ColumnHeader columnHeader24;
+		private System.Windows.Forms.ColumnHeader columnHeader25;
 	}
 }

@@ -23,6 +23,7 @@ namespace QLBanHang
 			SetInputCategoryText();
 			LoadCategoryList(WorkingContext.CategoryList);
 			LoadFoodList(WorkingContext.FoodList);
+			LoadAccountList(WorkingContext.AccountList);
 		}
 
 		private void LoadCategoryList(List<Category> list)
@@ -39,12 +40,16 @@ namespace QLBanHang
 
 				flpDsLoaiMatHang.Controls.Add(btn);
 			}
+
+			lblCategoryNum.Text = list.Count.ToString();
 		}
 
 		private void CategoryButton_Click(object sender, EventArgs e)
 		{
-			var str = "Click nút " + (sender as Button).Text + (sender as Button).Tag;
-			MessageBox.Show(str);
+			var id = int.Parse((sender as Button).Tag.ToString());
+
+			var list = WorkingContext.FoodList.Where(f => f.CategoryId == id).ToList();
+			LoadFoodList(list);
 		}
 
 		private void btnAddCategory_Click(object sender, EventArgs e)
@@ -89,6 +94,7 @@ namespace QLBanHang
 			{
 				AddFoodToLV(food);
 			}
+			lblFoodNum.Text = list.Count.ToString();
 		}
 
 		private void AddFoodToLV(Food f)
@@ -103,6 +109,31 @@ namespace QLBanHang
 			item.SubItems.Add(f.ImageLink);
 
 			lvDsMonAn.Items.Add(item);
+		}
+
+		private void LoadAccountList(List<Account> list)
+		{
+			lvAccountList.Items.Clear();
+			foreach (var account in list)
+			{
+				AddAccountToLV(account);
+			}
+			lblFoodNum.Text = list.Count.ToString();
+		}
+
+		private void AddAccountToLV(Account acc)
+		{
+			var item = new ListViewItem(acc.Id.ToString());
+			item.SubItems.Add(acc.LoginName);
+			item.SubItems.Add(acc.FullName);
+			item.SubItems.Add(acc.SoCCCD);
+			item.SubItems.Add(acc.SoDienThoai);
+			item.SubItems.Add(acc.DiaChi);
+			item.SubItems.Add(acc.RoleType == 0 ? "Quản lý" : "Nhân viên");
+			item.SubItems.Add(acc.IsActive ? "Đang hoạt động" : "Đã xóa");
+			item.SubItems.Add(acc.Password);
+
+			lvAccountList.Items.Add(item);
 		}
 
 		private void btnAddFood_Click(object sender, EventArgs e)
@@ -137,6 +168,28 @@ namespace QLBanHang
 				item.SubItems[4].Text = food.CategoryId.ToString();
 				item.SubItems[5].Text = food.Description;
 				item.SubItems[6].Text = food.ImageLink;
+			}
+		}
+
+		private void cbbNhaCC_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			var nhacc = cbbNhaCC.SelectedItem.ToString();
+
+			var list = WorkingContext.FoodList.Where(f => f.NhaCungCap.Contains(nhacc)).ToList();
+			LoadFoodList(list);
+		}
+
+		private void tsmiDelete_Click(object sender, EventArgs e)
+		{
+			if (lvDsMonAn.SelectedItems.Count > 0)
+			{
+				var list = WorkingContext.FoodList;
+				foreach (ListViewItem item in lvDsMonAn.SelectedItems)
+				{
+					var id = int.Parse(item.Text);
+					list.RemoveAll(f => f.Id == id);
+				}
+				LoadFoodList(list);
 			}
 		}
 	}

@@ -8,21 +8,25 @@ namespace QLBanHang
 {
 	public static class WorkingContext
 	{
-		public static string UserName { get; set; }
+		public static Account CurrentUser{ get; set; }
 
 		public static string Password { get; set; }
-
-		
 
 		public static List<Category> CategoryList { get; set; }
 
 		public static List<Food> FoodList { get; set; }
+
+		public static List<Account> AccountList { get; set; }
+
+		public static List<DiningTable> TableList { get; set; }
 
 		static WorkingContext()
 		{
 			
 			CategoryList = CreateDataCategoryList();
 			FoodList = CreateDataFoodList();
+			AccountList = CreateDataAccountList();
+			TableList = CreateDataTableList();
 		}
 
 		
@@ -55,6 +59,34 @@ namespace QLBanHang
 				new Food(9, "Rau muống xào tỏi", "Dĩa", 40000, "", "", 3, "Bếp 3"),
 				new Food(10, "Gà hấp hành", "Dĩa", 200000, "", "", 4, "Bếp 2")
 			};
+		}
+
+		private static List<Account> CreateDataAccountList()
+		{
+			return new List<Account>()
+			{
+				new Account(1,"ngaptt", "1","Phan Thanh Nga", "332435465768", "0974343556", "ĐhĐL", 0, true),
+				new Account(2,"admin", "123456","Phan Thanh Nga", "332435465768", "0974343556", "ĐhĐL", 0, true),
+				new Account(3, "nv", "1", "Nguyễn Bảo Trâm", "0776755464324", "0974388888", "Yersin", 1, true),
+			};
+		}
+
+		private static List<DiningTable> CreateDataTableList()
+		{
+			var result = new List<DiningTable>();
+			Random r = new Random();
+
+			for (int i = 1; i < 27; i++)
+			{
+				DiningTable table = new DiningTable();
+				table.TableName = $"Bàn {i}";
+				table.TableId = i;
+				table.Status = r.Next(0, 3); // 0- Trống, 1- Có người, 2 - Được đặt
+				table.Floor = r.Next(1, 4);
+
+				result.Add(table);
+			}
+			return result;
 		}
 	}
 }

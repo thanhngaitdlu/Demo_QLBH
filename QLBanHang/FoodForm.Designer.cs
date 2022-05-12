@@ -48,6 +48,7 @@
 			this.label9 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.cbbNhaCC = new System.Windows.Forms.ComboBox();
+			this.button1 = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.nudUnitPrice)).BeginInit();
 			this.groupBox4.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.ptbFoodImage)).BeginInit();
@@ -266,6 +267,16 @@
 			this.cbbNhaCC.Size = new System.Drawing.Size(341, 24);
 			this.cbbNhaCC.TabIndex = 24;
 			// 
+			// button1
+			// 
+			this.button1.Location = new System.Drawing.Point(760, 179);
+			this.button1.Margin = new System.Windows.Forms.Padding(4);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(100, 27);
+			this.button1.TabIndex = 23;
+			this.button1.Text = "Thêm mới";
+			this.button1.UseVisualStyleBackColor = true;
+			// 
 			// FoodForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -275,6 +286,7 @@
 			this.Controls.Add(this.cbbCategory);
 			this.Controls.Add(this.btnSaveFood);
 			this.Controls.Add(this.txtDescription);
+			this.Controls.Add(this.button1);
 			this.Controls.Add(this.btnBrowse);
 			this.Controls.Add(this.nudUnitPrice);
 			this.Controls.Add(this.groupBox4);
@@ -323,5 +335,6 @@
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.ComboBox cbbNhaCC;
+		private System.Windows.Forms.Button button1;
 	}
 }
